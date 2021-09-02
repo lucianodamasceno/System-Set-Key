@@ -1,0 +1,130 @@
+#btnBuscaChave{ 
+    -fx-background-image: url('../image/procurar.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 30px;
+    -fx-background-position: 50%;
+    -fx-background-color:transparent;
+}
+#btnBuscaChave:hover{ 
+    -fx-background-color: black;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 30;
+    -fx-border-width: 3;
+}
+
+#btnBuscaChave:pressed{ 
+    -fx-background-size: 40px;
+}
+
+#btnBuscaPessoa{ 
+    -fx-background-image: url('../image/procurar.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 30px;
+    -fx-background-position: 50%;
+    -fx-background-color:transparent;
+}
+
+#btnBuscaPessoa:hover{ 
+    -fx-background-color: black;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 30;
+    -fx-border-width: 3;
+}
+Label{
+    -fx-background-radius: 10;
+}
+
+TextField{
+    -fx-font-size: 14 pt;
+    -fx-background-radius: 15; 
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-border-color: #2196f3;
+    -fx-text-fill: black;
+}
+
+TextField:pressed{
+    -fx-border-color: #2196f3;
+}
+
+TableView{
+    -fx-alignment: center;
+    -font-weight: bold;
+    -fx-background-radius: 5;
+}
+
+Table-view.column-header{
+    -fx-alignment: center;
+    -font-weight: bold;
+    -fx-background-radius: 2;
+}
+.table-row-cell:selected {
+    -fx-background-color: #00B9FF;
+    -fx-background-insets: 0;
+    -fx-background-radius: 10;
+}
+
+.button{
+    -fx-background-radius: 30;       
+    -fx-background-color: #2196f3;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-size: 16 pt;
+}
+.button:hover{
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    -fx-background-color: black;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+}
+.button:pressed{
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    -fx-background-color: black;
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+}
+
+.table-column  {
+    -fx-alignment: CENTER;
+}
+.tab {
+    -fx-background-color:transparent;
+    -fx-pref-width: 900;
+    -fx-pref-height: 35;
+}
+
+.tab-header-background {
+    -fx-background-color:transparent;
+}
+
+.tab:selected {
+    -fx-background-color:#2196f3;
+}
+#btnGerenciaChave{
+    -fx-background-image: url('../image/chave.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 20%;
+    -fx-background-size: 30;
+}
+#btnGerenciaPessoa{
+    -fx-background-image: url('../image/people.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 20%;
+    -fx-background-size: 30;
+}
+#btnHistorico{
+    -fx-background-image: url('../image/historia.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 20%;
+    -fx-background-size: 30;
+}
+.dialog-pane:header .header-panel .label {
+    -fx-font-size: 1.167em; /* 14px */
+    -fx-wrap-text: true;
+    -fx-text-fill: white;
+}

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="Anchor" prefHeight="500.0" prefWidth="600.0" stylesheets="@../UI/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GerenciaChaveController">
+   <children>
+      <JFXTabPane fx:id="tbPane" prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+          <Tab text="NOVO">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="360.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="60.0" layoutY="32.0" opacity="0.37" prefHeight="265.0" prefWidth="480.0" style="-fx-background-color: black; -fx-background-radius: 15;" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0" />
+                        <Label layoutX="132.0" layoutY="42.0" opacity="0.61" text="Cadastrar chave" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="45.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtNovoNumero" alignment="CENTER" layoutX="170.0" layoutY="134.0" prefHeight="34.0" prefWidth="73.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font></TextField>
+                        <TextField fx:id="txtNovoLocal" layoutX="170.0" layoutY="184.0" prefHeight="34.0" prefWidth="363.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <TextField fx:id="txtNovoDepartamento" layoutX="170.0" layoutY="234.0" prefHeight="34.0" prefWidth="363.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="60.0" layoutY="241.0" text="Departamento" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="111.0" layoutY="190.0" text="Local" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="90.0" layoutY="139.0" text="Número" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="btnCadastrar" buttonType="RAISED" layoutX="238.0" layoutY="328.0" onAction="#cadastrarChave" prefHeight="70.0" prefWidth="125.0" text="Cadastrar" textOverrun="CENTER_ELLIPSIS">
+                           <font>
+                              <Font name="System Bold" size="29.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="78.0" layoutY="158.0" opacity="0.18" text="Obrigatório" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="78.0" layoutY="208.0" opacity="0.18" text="Obrigatório" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab closable="false" text="EDITAR">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="53.0" layoutY="226.0" opacity="0.37" prefHeight="183.0" prefWidth="447.0" style="-fx-background-radius: 15;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                        <TextField fx:id="txtBuscaChave" layoutX="88.0" layoutY="14.0" onKeyPressed="#cmdEnterChave" onKeyReleased="#cmdChaveNull" prefHeight="34.0" prefWidth="425.0" promptText="Buscar chave" />
+                        <TableView fx:id="tbBuscaChave" layoutX="14.0" layoutY="63.0" onMouseClicked="#selectLinha" prefHeight="153.0" prefWidth="567.0">
+                           <columns>
+                              <TableColumn fx:id="tbChaveChave" maxWidth="64.0" minWidth="30.0" prefWidth="55.0" text="Chave" />
+                              <TableColumn fx:id="tbChaveLocal" maxWidth="383.0" minWidth="200.0" prefWidth="390.0" text="Local" />
+                              <TableColumn fx:id="tbChaveDPTO" maxWidth="294.0" minWidth="35.0" prefWidth="111.0" text="Departamento" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="txtEditNum" alignment="CENTER" layoutX="163.0" layoutY="253.0" prefHeight="34.0" prefWidth="73.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <TextField fx:id="txtEditLocal" layoutX="163.0" layoutY="304.0" prefHeight="34.0" prefWidth="350.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <TextField fx:id="txtEditDepartamento" layoutX="163.0" layoutY="355.0" prefHeight="34.0" prefWidth="350.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextField>
+                        <Label layoutX="254.0" layoutY="227.0" opacity="0.61" text="Editar chave" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="45.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="84.0" layoutY="260.0" text="Número" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="105.0" layoutY="311.0" text="Local" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="54.0" layoutY="362.0" text="Departamento" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="btnEditar" buttonType="RAISED" layoutX="25.0" layoutY="409.0" onAction="#Editar" prefHeight="40.0" prefWidth="80.0" text="Editar" />
+                        <JFXButton fx:id="btnConfirmar" buttonType="RAISED" layoutX="184.0" layoutY="410.0" onAction="#Confirmar" prefHeight="40.0" prefWidth="105.0" text="Confirmar" />
+                        <JFXButton fx:id="btnCancelar" buttonType="RAISED" layoutX="300.0" layoutY="410.0" onAction="#Cancelar" prefHeight="40.0" prefWidth="105.0" text="Cancelar" />
+                        <JFXButton fx:id="btnExcluir" buttonType="RAISED" layoutX="492.0" layoutY="409.0" onAction="#Exclluir" prefHeight="40.0" prefWidth="80.0" ripplerFill="RED" style="-fx-border-color: red;" text="Excluir" textFill="WHITE" />
+                        <Label layoutX="72.0" layoutY="277.0" opacity="0.18" text="Obrigatório" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="72.0" layoutY="328.0" opacity="0.18" text="Obrigatório" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

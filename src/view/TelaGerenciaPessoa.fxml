@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" stylesheets="@../UI/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GerenciaPessoaController">
+   <children>
+      <JFXTabPane fx:id="tbPane" prefHeight="606.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+          <Tab text="NOVO">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="40.0" layoutY="15.0" opacity="0.37" prefHeight="354.0" prefWidth="520.0" style="-fx-background-color: black; -fx-background-radius: 15;" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="15.0" />
+                        <TextField fx:id="txtnovoNome" layoutX="160.0" layoutY="155.0" prefHeight="34.0" prefWidth="264.0" />
+                        <TextField fx:id="txtnovoCPF" layoutX="160.0" layoutY="205.0" onKeyReleased="#maskCPF_Novo" prefHeight="34.0" prefWidth="130.0" />
+                        <TextField fx:id="txtnovoTel" layoutX="160.0" layoutY="255.0" onKeyReleased="#maskTel_Novo" prefHeight="34.0" prefWidth="130.0" />
+                        <TextField fx:id="txtnovaEmpresa" layoutX="160.0" layoutY="305.0" prefHeight="34.0" prefWidth="271.0" />
+                        <Label layoutX="109.0" layoutY="33.0" opacity="0.61" text="Cadastrar pessoa" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="48.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="51.0" layoutY="312.0" text="Empresa/Dpto" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="78.0" layoutY="262.0" text="Telefone" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="102.0" layoutY="212.0" text="CPF" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="94.0" layoutY="162.0" text="Nome" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="btnCadastrar" buttonType="RAISED" layoutX="240.0" layoutY="432.0" onAction="#CadastrarPessoa" prefHeight="70.0" prefWidth="125.0" text="Cadastrar" />
+                        <Label layoutX="68.0" layoutY="179.0" opacity="0.18" text="Obrigatório" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="68.0" layoutY="229.0" opacity="0.18" text="Obrigatório" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="EDITAR">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="110.0" layoutY="255.0" text="ID" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tbBuscaPessoa" layoutX="6.0" layoutY="59.0" onMouseClicked="#selectLinha" prefHeight="157.0" prefWidth="582.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                           <columns>
+                              <TableColumn fx:id="tbPessoaID" editable="false" maxWidth="50.0" minWidth="0.0" prefWidth="0.0" text="ID" />
+                              <TableColumn fx:id="tbPessoaNome" editable="false" minWidth="100.0" prefWidth="240.0" text="Nome" />
+                              <TableColumn fx:id="tbPessoaCPF" editable="false" minWidth="50.0" prefWidth="113.0" text="CPF" />
+                              <TableColumn fx:id="tbPessoaTel" editable="false" prefWidth="100.0" text="Telefone" />
+                              <TableColumn fx:id="tbPessoaEmpresa" editable="false" minWidth="30.0" prefWidth="120.0" text="Empresa/dpto" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="txtBuscaPessoa" layoutX="87.0" layoutY="14.0" onKeyPressed="#cmdEnterPessoa" onKeyReleased="#cmdPessoaNull" prefHeight="34.0" prefWidth="427.0" promptText="Buscar pessoa" />
+                        <TextField fx:id="txtID" alignment="CENTER" editable="false" layoutX="168.0" layoutY="248.0" prefHeight="34.0" prefWidth="66.0" />
+                        <Label layoutX="47.0" layoutY="225.0" opacity="0.37" prefHeight="276.0" prefWidth="500.0" style="-fx-background-radius: 15; -fx-background-color: black;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                        <TextField fx:id="txtEditNome" layoutX="168.0" layoutY="295.0" prefHeight="34.0" prefWidth="345.0" />
+                        <TextField fx:id="txtEditCPF" layoutX="168.0" layoutY="345.0" onKeyReleased="#maskCPF_Edit" prefHeight="34.0" prefWidth="130.0" />
+                        <TextField fx:id="txtEditTel" layoutX="168.0" layoutY="395.0" onKeyReleased="#maskTel_Edit" prefHeight="34.0" prefWidth="130.0" />
+                        <TextField fx:id="txtEditEmpresa" layoutX="168.0" layoutY="445.0" prefHeight="34.0" prefWidth="253.0" />
+                        <Label layoutX="256.0" layoutY="227.0" opacity="0.61" text="Editar pessoa" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="45.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="96.0" layoutY="302.0" text="Nome" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="104.0" layoutY="353.0" text="CPF" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="81.0" layoutY="402.0" text="Telefone" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="61.0" layoutY="452.0" text="Empresa/dpto" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="btnEditar" buttonType="RAISED" layoutX="21.0" layoutY="512.0" onAction="#Editar" prefHeight="40.0" prefWidth="80.0" text="Editar" />
+                        <JFXButton fx:id="btnConfirmar" buttonType="RAISED" layoutX="184.0" layoutY="512.0" onAction="#Confirmar" prefHeight="40.0" prefWidth="105.0" text="Confirmar" />
+                        <JFXButton fx:id="btnCancelar" buttonType="RAISED" layoutX="316.0" layoutY="512.0" onAction="#Cancelar" prefHeight="40.0" prefWidth="105.0" text="Cancelar" />
+                        <JFXButton fx:id="btnExcluir" buttonType="RAISED" layoutX="499.0" layoutY="511.0" onAction="#Exclluir" prefHeight="40.0" prefWidth="80.0" style="-fx-border-color: red;" text="Excluir" textFill="WHITE" />
+                        <Label layoutX="70.0" layoutY="369.0" opacity="0.18" text="Obrigatório" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="76.0" layoutY="319.0" opacity="0.18" text="Obrigatório" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

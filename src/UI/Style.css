@@ -1,0 +1,225 @@
+#tbPane{
+    -fx-background-color: linear-gradient(to right top, #7d7d7e, #5d5c5d, #3e3e3e, #222222, #000000);
+}
+
+.menu-bar {
+    -fx-background-size: 25;
+    -fx-background-color: white;
+    -fx-border-width: 1;
+    -fx-text-fill: greenyellowen;
+    -font-weight: bold;
+}
+.menu-bar .label {
+    -fx-font-size: 12 pt;
+    -fx-text-fill: black;
+    -font-weight: bold;
+    -fx-alignment: center;
+    -fx-pref-width: 110;
+    -fx-pref-height: 30;
+}
+.menu-item {
+    -fx-padding: 0.0em 0.0em 0.0em 0.0em;
+    -fx-text-fill: black;
+    -fx-background: darkgray ;
+
+}
+
+.menu-item .label {
+    -fx-alignment: CENTER;
+}
+
+.menu-item #MenuSobre{
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.menu-item{
+    -fx-alignment: center;
+}
+.menu:hover {
+    -fx-background-color: #2196f3;
+}
+
+.menu-item:hover{
+    -fx-background-color: #2196f3;
+}
+Label{
+    -fx-background-radius: 10;
+}
+
+TextField{
+    -fx-font-size: 14 pt;
+    -fx-background-radius: 15; 
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-border-color: #2196f3;
+    -fx-text-fill: black;
+}
+
+TextField:pressed{
+    -fx-border-color: #2196f3;
+}
+
+
+#btnBuscaChaveHistorico{ 
+
+    -fx-background-image: url('../image/procurar.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 30px;
+    -fx-background-position: 50%;
+}
+
+#btnBuscaChaveHistorico:hover{ 
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 30;
+    -fx-border-width: 3;
+}
+
+TableView{
+    -fx-alignment: center;
+    -font-weight: bold;
+    -fx-background-radius: 5;
+}
+Table-view.column-header{
+    -fx-alignment: center;
+    -font-weight: bold;
+    -fx-background-radius: 2;
+}
+.table-row-cell:selected {
+    -fx-background-color: #00B9FF;
+    -fx-background-insets: 0;
+    -fx-background-radius: 10;
+}
+.table-row-cell:hover{
+    -fx-background-color: #DEDEDE;
+    -fx-background-radius: 10;
+    -fx-font-size: 14 pt;
+}
+
+
+.button{
+    -fx-background-radius: 30;       
+    -fx-background-color: #2196f3;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-size: 16 pt;
+}
+.button:hover{
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    -fx-background-color: black;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+}
+.button:pressed{
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    -fx-background-color: black;
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+}
+#btnExcluir{
+    -fx-background-radius: 30;
+    -fx-background-color: red;
+    -fx-border-color: black;
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+}
+#btnExcluir:hover{
+    -fx-border-width: 3;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 30;
+    -fx-background-color: black;
+}
+
+#btnBaixa{
+    -fx-background-radius: 30;        
+    -fx-font-weight: bold;
+    -fx-background-color: #2196f3;
+    -fx-text-fill: white;
+}
+
+#btnBaixa:hover{
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    -fx-background-color: black;
+    -fx-border-color: #2196f3;
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+}
+
+#btnBaixa:pressed{
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    -fx-background-color: black;
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+}
+.table-column  {
+    -fx-alignment: CENTER;
+}
+.tab {
+    -fx-background-color: transparent;
+    -fx-pref-width: 280;
+    -fx-pref-height: 35;
+}
+
+.tab-header-background {
+    -fx-background-color:transparent;
+}
+
+.tab:selected {
+    -fx-background-color:#2196f3;
+}
+
+#btnGerenciaChave> .label{
+    -fx-graphic: url("../image/chaveIco.png");
+}
+
+/*
+#btnGerenciaChave{
+    -fx-background-image: url('../image/chave.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 20%;
+    -fx-background-size: 30;
+}*/
+#btnGerenciaPessoa >.label{
+    -fx-graphic: url("../image/peopleIco.png")
+
+}
+#btnHistorico> .label{
+    -fx-graphic: url("../image/historiaIco.png");
+}
+
+#btnHistorico .accelerator-text{
+    -fx-graphic: url("../image/aboutIco.png");
+}
+
+#MenuSobre> .label{
+    -fx-graphic: url("../image/aboutIco.png");
+}
+
+.table-view:focused .table-row-cell:focused {
+    -fx-border-color: derive(-fx-base, 20%);
+    -fx-background-insets: 0 0 0 0;
+    -fx-table-cell-border-color: transparent;
+}
+
+#lblLineC{
+    -fx-graphic: url("../image/LineC.png");
+    -fx-background-color: transparent;
+}
+
+#lblLineP{
+    -fx-graphic: url("../image/LineC.png");
+    -fx-background-color: transparent;
+}
+
+#lblLineE{
+    -fx-graphic: url("../image/LineE.png");
+    -fx-background-color: transparent;
+}
