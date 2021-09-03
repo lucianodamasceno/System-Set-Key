@@ -23,17 +23,17 @@ import model.Access.Connection;
  */
 public class emUso {
 
-    private int idHistorico;
-    private int idPessoa;
-    private int chave;
-    private String local;
-    private String pessoa;
-    private String diaSaida;
-    private String horaSaida;
-    private String diaRetorno;
-    private String horaRetorno;
-    private int intRegistro;
-    private int totUso;
+    private int idHistorico = 0;
+    private int idPessoa = 0;
+    private int chave = 0;
+    private String local = "";
+    private String pessoa = "";
+    private String diaSaida = "";
+    private String horaSaida = "";
+    private String diaRetorno = "";
+    private String horaRetorno = "";
+    private int intRegistro = 0;
+    private int totUso = 0;
     GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
     private final int width = gd.getDisplayMode().getWidth();
     private final int height = gd.getDisplayMode().getHeight();
@@ -265,5 +265,4 @@ public class emUso {
 
         alert.showAndWait();
     }
-
 }

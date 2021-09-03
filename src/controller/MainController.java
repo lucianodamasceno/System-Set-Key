@@ -43,7 +43,6 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import model.Chave;
 import model.DateTime;
-import model.Log;
 import model.Pessoa;
 import model.emUso;
 
@@ -469,7 +468,6 @@ public class MainController implements Initializable {
         tbEmUsoHora.setCellValueFactory(new PropertyValueFactory("horaSaida"));
 
         tblEmUso.setItems(tabelaEmUso());
-//        lblTotalUso.setText(Integer.toString(TotUso));
 
     }
 
@@ -568,7 +566,6 @@ public class MainController implements Initializable {
     public void Sobre() {
         
       Main main = new Main();
-      String nameSys = main.getNameSystem();
       String dev = main.getDev();
       String versao = main.getVersao();
       String email = "luciano.galdinosilva@hotmail.com";
@@ -577,7 +574,7 @@ public class MainController implements Initializable {
        
         String sobre = "Sistema de controle de gerência de chaves\n\nDesenvolvido por: "+dev;
         sobre += sobre = "\nContato: "+email+" "+cel+ "\n\nVersão "+versao;
-        Alert("Sobre o System Set Key:", sobre, Alert.AlertType.INFORMATION);
+        Alert("Sobre o System Set Key", sobre, Alert.AlertType.INFORMATION);
     }
 
     private void Alert(String Tittle, String ContentText, Alert.AlertType tipo) {

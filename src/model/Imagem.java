@@ -5,7 +5,6 @@
  */
 package model;
 
-import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -27,14 +26,13 @@ public class Imagem {
 
         Canvas canvas = new Canvas(528, 24);
         root.getChildren().add(canvas);
-        
+
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Image img = new Image("/image/peopleIco.png");
         gc.drawImage(img, 500, 500);
         theStage.show();
-        
+
         System.out.println("teste");
 
-        
     }
 }

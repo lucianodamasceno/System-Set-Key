@@ -39,11 +39,11 @@ import model.Log;
  */
 public class GerenciaChaveController extends MainController {
 
-    private int numero;
-    private String local;
-    private String dpto;
-    private int numeroN;
-    private String localN;
+    private int numero = 0;
+    private String local = "";
+    private String dpto = "";
+    private int numeroN = 0;
+    private String localN = "";
     DateTime dt = new DateTime();
     String dia = dt.getDia();
     String hora = dt.getHora();
@@ -135,9 +135,7 @@ public class GerenciaChaveController extends MainController {
     private void selectLinha(MouseEvent e) {
         navegacao("select");
         numero = tbBuscaChave.getSelectionModel().getSelectedItem().getNumChave();
-        //numeroA = tbBuscaChave.getSelectionModel().getSelectedItem().getNumChave();
         local = tbBuscaChave.getSelectionModel().getSelectedItem().getLocal();
-        //localA = tbBuscaChave.getSelectionModel().getSelectedItem().getLocal();
 
         dpto = tbBuscaChave.getSelectionModel().getSelectedItem().getDepartamento();
         txtEditNum.setText(String.valueOf(numero));

@@ -24,15 +24,15 @@ import model.Access.Connection;
  */
 public class Chave {
 
-    private int NumChave;
-    private int Where;
-    private String Local;
-    private String Departamento;
-    private String buscaChave;
-    private String Disponivel;
+    private int NumChave = 0;
+    private int Where = 0;
+    private String Local = "";
+    private String Departamento = "";
+    private String buscaChave = "";
+    private String Disponivel = "";
     java.sql.ResultSet rsBusca;
-    private int width;
-    private int height;
+    private int width = 0;
+    private int height = 0;
 
     public Chave(int NumChave, String Local, String Departamento, String Disponivel) {
         this.NumChave = NumChave;

@@ -23,14 +23,14 @@ import model.Access.Connection;
  */
 public class Pessoa {
 
-    private int id;
-    private String nome;
-    private String CPF;
-    private String Telefone;
-    private String Empresa;
-    private String where;
-    private int width;
-    private int height;
+    private int id = 0;
+    private String nome = "";
+    private String CPF = "";
+    private String Telefone = "";
+    private String Empresa = "";
+    private String where = "";
+    private int width = 0;
+    private int height = 0;
 
     public Pessoa() {
     }
@@ -145,8 +145,6 @@ public class Pessoa {
     }
 
     public void InserePessoa() {
-        Encrypt enc = new Encrypt("QueZxsweqqER39zZ");
-
         con.Open();
         Conexao = con.getConexao();
         PreparedStatement strComandoSQL;

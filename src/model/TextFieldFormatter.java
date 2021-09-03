@@ -29,7 +29,7 @@ public class TextFieldFormatter {
         mf.setValidCharacters(CaracteresValidos);
         mf.setValueContainsLiteralCharacters(false);
         String text = tf.getText().replaceAll("[\\W]", "");
-        
+
         boolean repetir = true;
         while (repetir) {
 
@@ -60,7 +60,7 @@ public class TextFieldFormatter {
         }
     }
 
-    public void formatter(){
+    public void formatter() {
         formatter(this.tf, this.CaracteresValidos, this.mask);
     }
 
@@ -91,7 +91,7 @@ public class TextFieldFormatter {
     public void setCaracteresValidos(String CaracteresValidos) {
         this.CaracteresValidos = CaracteresValidos;
     }
-    
+
     public String getMask() {
         return mask;
     }
