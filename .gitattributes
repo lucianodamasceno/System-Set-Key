@@ -1,2 +1,2 @@
-static/* linguist-vendored
-*.html linguist-detectable=Java
+$ cat .gitattributes
+*.html linguist-language=Java
