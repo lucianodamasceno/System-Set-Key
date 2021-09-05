@@ -24,7 +24,8 @@ public class Log {
         String initDia = dt.getDia();
         String initHora = dt.getHora();
 
-        String doc = "*** Log de edições do System Set Key\n"
+        String doc = ""
+                + "*** Log de edições do System Set Key\n"
                 + "*** Versão " + versao + "\n"
                 + "*** Inicialização: " + initDia + "|" + initHora + "\n"
                 + "*** Criado e desenvolvido por: " + dev + "\n\n"
