@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import model.Access.Connection;
 
@@ -24,21 +25,39 @@ import model.Access.Connection;
  */
 public class Chave {
 
-    private int NumChave = 0;
+    private int NumChave = -1;
     private int Where = 0;
-    private String Local = "";
-    private String Departamento = "";
-    private String buscaChave = "";
-    private String Disponivel = "";
+    private String Local;
+    private String Departamento;
+    private String buscaChave;
+    private String Disponivel;
     java.sql.ResultSet rsBusca;
-    private int width = 0;
-    private int height = 0;
+    private int width;
+    private int height;
+
+    private ImageView photo;
 
     public Chave(int NumChave, String Local, String Departamento, String Disponivel) {
         this.NumChave = NumChave;
         this.Local = Local;
         this.Departamento = Departamento;
         this.Disponivel = Disponivel;
+    }
+
+    public Chave(int NumChave, String Local, String Departamento, ImageView photo) {
+        this.NumChave = NumChave;
+        this.Local = Local;
+        this.Departamento = Departamento;
+        this.photo = photo;
+    }
+
+    public ImageView getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(ImageView photo) {
+        this.photo = photo;
+
     }
 
     public Chave() {
@@ -95,6 +114,19 @@ public class Chave {
     Connection con = new Connection();
     java.sql.Connection Conexao;
 
+    public ImageView img(String valida) {
+        String caminhoIms = null;
+        ImageView emp1photo;
+
+        if (valida.contains("SIM")) {
+            caminhoIms = "/image/true.png";
+        } else {
+            caminhoIms = "/image/false.png";
+        }
+        emp1photo = new ImageView(new Image(this.getClass().getResourceAsStream(caminhoIms)));
+        return emp1photo;
+    }
+
     public List<Chave> allChave() {
         ArrayList<Chave> result = new ArrayList<>();
         con.Open();
@@ -106,7 +138,7 @@ public class Chave {
                         rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
-                        rs.getString(4));
+                        img(rs.getString(4)));
                 result.add(c);
             }
         } catch (SQLException ex) {

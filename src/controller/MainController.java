@@ -35,6 +35,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -56,16 +57,13 @@ public class MainController implements Initializable {
     private boolean WindowGerChaveOpend;
     private static boolean WindowGerPessoaOpend;
     private static boolean WindowsHistorico;
-    private int idChave;
-    private int idPessoa;
-    private int idHistorico;
+    private int idChave = 0;
+    private int idPessoa = 0;
+    private int idHistorico = 0;
     GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
     private final int width = gd.getDisplayMode().getWidth();
     private final int height = gd.getDisplayMode().getHeight();
     private int TotUso;
-    private int posC;
-    private int posP;
-    private int posE;
     private int delay = 0;
 
     // TABELA CHAVE
@@ -207,7 +205,6 @@ public class MainController implements Initializable {
 
     @FXML
     private void selectLinhaChave(MouseEvent e) {
-        posC = (int) e.getY();
         try {
             if (e.getButton().equals(MouseButton.SECONDARY)) {
                 idChave = tbBuscaChave.getSelectionModel().getSelectedItem().getNumChave();
@@ -242,7 +239,6 @@ public class MainController implements Initializable {
 
     @FXML
     private void selectLinhaPessoa(MouseEvent e) {
-        posP = (int) e.getY();
         try {
             idPessoa = tbBuscaPessoa.getSelectionModel().getSelectedItem().getId();
         } catch (Exception ex) {
@@ -251,7 +247,6 @@ public class MainController implements Initializable {
 
     @FXML
     private void selectLinhaUso(MouseEvent e) {
-        posE = (int) e.getY();
 
         try {
             if (e.getButton().equals(MouseButton.SECONDARY)) {
@@ -308,7 +303,7 @@ public class MainController implements Initializable {
         setRotate(c1, 360, 1, 1, true);
         setRotate(c2, -360, 1, 3, true);
         setRotate(c3, 360, 1, 4, true);
-        
+
         boot();
     }
 
@@ -317,6 +312,7 @@ public class MainController implements Initializable {
         initTablePessoa();
         initTableEmUso();
         lblTotalUso.setText(Integer.toString(TotUso));
+
     }
 
     public void setRotate(Circle c, int angle, int duration, int delay, boolean infinite) {
@@ -511,16 +507,16 @@ public class MainController implements Initializable {
     }
 
     public void initTableChave() {
+
         tbChaveChave.setCellValueFactory(new PropertyValueFactory("NumChave"));
         tbChaveLocal.setCellValueFactory(new PropertyValueFactory("local"));
         tbChaveDPTO.setCellValueFactory(new PropertyValueFactory("departamento"));
-        tbChaveDisponivel.setCellValueFactory(new PropertyValueFactory<>("disponivel"));
+        tbChaveDisponivel.setCellValueFactory(new PropertyValueFactory<>("photo"));
         customiseFactory(tbChaveLocal);
 
         tbBuscaChave.setItems(tabelaChave());
 
         customiseFactory(tbChaveLocal);
-
     }
 
     public ObservableList<Chave> tabelaChave() {
@@ -545,8 +541,7 @@ public class MainController implements Initializable {
                         if (item.contains("*")) {
                             currentRow.setStyle("-fx-text-background-color:red");
                         } else {
-                            currentRow.setStyle(
-                                    ".table-row-cell .table-cell{-fx-text-fill: black;}");
+                            currentRow.setStyle(".table-row-cell .table-cell{-fx-text-fill: black;}");
                         }
                     }
                 }
@@ -564,16 +559,15 @@ public class MainController implements Initializable {
 
     @FXML
     public void Sobre() {
-        
-      Main main = new Main();
-      String dev = main.getDev();
-      String versao = main.getVersao();
-      String email = "luciano.galdinosilva@hotmail.com";
-      String cel = "(11)94861-5196";
-      
-       
-        String sobre = "Sistema de controle de gerência de chaves\n\nDesenvolvido por: "+dev;
-        sobre += sobre = "\nContato: "+email+" "+cel+ "\n\nVersão "+versao;
+
+        Main main = new Main();
+        String dev = main.getDev();
+        String versao = main.getVersao();
+        String email = "luciano.galdinosilva@hotmail.com";
+        String cel = "(11)94861-5196";
+
+        String sobre = "Sistema de controle de gerência de chaves\n\nDesenvolvido por: " + dev;
+        sobre += sobre = "\nContato: " + email + " " + cel + "\n\nVersão " + versao;
         Alert("Sobre o System Set Key", sobre, Alert.AlertType.INFORMATION);
     }
 
