@@ -57,9 +57,9 @@ public class MainController implements Initializable {
     private boolean WindowGerChaveOpend;
     private static boolean WindowGerPessoaOpend;
     private static boolean WindowsHistorico;
-    private int idChave = 0;
-    private int idPessoa = 0;
-    private int idHistorico = 0;
+    private int idChave = -1;
+    private int idPessoa = -1;
+    private int idHistorico = -1;
     GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
     private final int width = gd.getDisplayMode().getWidth();
     private final int height = gd.getDisplayMode().getHeight();
@@ -205,6 +205,7 @@ public class MainController implements Initializable {
 
     @FXML
     private void selectLinhaChave(MouseEvent e) {
+
         try {
             if (e.getButton().equals(MouseButton.SECONDARY)) {
                 idChave = tbBuscaChave.getSelectionModel().getSelectedItem().getNumChave();
@@ -225,8 +226,8 @@ public class MainController implements Initializable {
                     initTableChave();
                     initTableEmUso();
                     initTablePessoa();
-                    idChave = 0;
-                    idPessoa = 0;
+                    idChave = -1;
+                    idPessoa = -1;
                     txtBuscaChave.setText("");
                     txtBuscaPessoa.setText("");
                 }
@@ -356,9 +357,9 @@ public class MainController implements Initializable {
                 uso.cautela();
                 boot();
                 setRotate(c2, 360, 1, 0, false);
-                idChave = 0;
-                idPessoa = 0;
-                idHistorico = 0;
+                idChave = -1;
+                idPessoa = -1;
+                idHistorico = -1;
                 txtBuscaChave.setText("");
                 txtBuscaPessoa.setText("");
             }
@@ -381,8 +382,8 @@ public class MainController implements Initializable {
             uso.setHoraRetorno(horaR);
             uso.descautela();
             setRotate(c3, 360, 1, 0, false);
-            idPessoa = 0;
-            idHistorico = 0;
+            idPessoa = -1;
+            idHistorico = -1;
             txtBuscaChave.setText("");
             txtBuscaPessoa.setText("");
             boot();
@@ -513,7 +514,6 @@ public class MainController implements Initializable {
         tbChaveDPTO.setCellValueFactory(new PropertyValueFactory("departamento"));
         tbChaveDisponivel.setCellValueFactory(new PropertyValueFactory<>("photo"));
         customiseFactory(tbChaveLocal);
-
         tbBuscaChave.setItems(tabelaChave());
 
         customiseFactory(tbChaveLocal);

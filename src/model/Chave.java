@@ -26,7 +26,7 @@ import model.Access.Connection;
 public class Chave {
 
     private int NumChave = -1;
-    private int Where = 0;
+    private int Where = -1;
     private String Local;
     private String Departamento;
     private String buscaChave;
@@ -116,15 +116,15 @@ public class Chave {
 
     public ImageView img(String valida) {
         String caminhoIms = null;
-        ImageView emp1photo;
+        ImageView img;
 
         if (valida.contains("SIM")) {
-            caminhoIms = "/image/true.png";
+            caminhoIms = "/image/sim.png";
         } else {
-            caminhoIms = "/image/false.png";
+            caminhoIms = "/image/nao.png";
         }
-        emp1photo = new ImageView(new Image(this.getClass().getResourceAsStream(caminhoIms)));
-        return emp1photo;
+        img = new ImageView(new Image(this.getClass().getResourceAsStream(caminhoIms)));
+        return img;
     }
 
     public List<Chave> allChave() {
@@ -251,7 +251,7 @@ public class Chave {
                         rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
-                        rs.getString(4));
+                        img(rs.getString(4)));
                 result.add(c);
             }
         } catch (SQLException ex) {

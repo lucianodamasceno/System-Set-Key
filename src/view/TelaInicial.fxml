@@ -14,15 +14,15 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="900.0" maxWidth="1440.0" minHeight="800.0" minWidth="1440.0" prefHeight="823.0" prefWidth="1440.0" style="-fx-background-color: linear-gradient(to right top, #7c7c7c, #5c5c5c, #3e3e3e, #222222, #000000);" stylesheets="@../UI/Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" focusTraversable="true" maxHeight="900.0" maxWidth="1440.0" minHeight="800.0" minWidth="1440.0" prefHeight="823.0" prefWidth="1440.0" style="-fx-background-color: linear-gradient(to right top, #7c7c7c, #5c5c5c, #3e3e3e, #222222, #000000);" stylesheets="@../UI/Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <children>
       <Label layoutX="9.0" layoutY="40.0" opacity="0.23" prefHeight="781.0" prefWidth="569.0" style="-fx-background-color: white; -fx-background-radius: 8;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="40.0" />
       <TableView fx:id="tbBuscaChave" layoutX="15.0" layoutY="133.0" onMouseClicked="#selectLinhaChave" prefHeight="279.0" prefWidth="554.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="133.0">
          <columns>
-            <TableColumn fx:id="tbChaveChave" editable="false" maxWidth="221.0" minWidth="0.0" prefWidth="60.0" text="Chave" />
-            <TableColumn fx:id="tbChaveLocal" editable="false" maxWidth="329.0" minWidth="0.0" prefWidth="258.0" text="Local" />
-            <TableColumn fx:id="tbChaveDPTO" editable="false" maxWidth="155.0" minWidth="0.0" prefWidth="128.0" text="Departamento" />
-            <TableColumn fx:id="tbChaveDisponivel" editable="false" maxWidth="177.0" minWidth="0.0" prefWidth="92.0" text="Disponível" />
+            <TableColumn fx:id="tbChaveChave" editable="false" maxWidth="220.0" minWidth="0.0" prefWidth="60.0" resizable="false" sortable="false" text="Chave" />
+            <TableColumn fx:id="tbChaveLocal" editable="false" maxWidth="329.0" minWidth="0.0" prefWidth="255.0" sortable="false" text="Local" />
+            <TableColumn fx:id="tbChaveDPTO" editable="false" maxWidth="173.0" minWidth="0.0" prefWidth="137.0" sortable="false" text="Departamento" />
+            <TableColumn fx:id="tbChaveDisponivel" editable="false" maxWidth="177.0" minWidth="0.0" prefWidth="83.0" resizable="false" sortable="false" text="Disponível" />
          </columns>
       </TableView>
       <Label contentDisplay="CENTER" layoutX="202.0" layoutY="35.0" prefHeight="28.0" prefWidth="180.0" style="-fx-background-color: transparent;" text="CAUTELA" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
@@ -69,10 +69,10 @@
       <TableView fx:id="tbBuscaPessoa" layoutX="15.0" layoutY="475.0" onMouseClicked="#selectLinhaPessoa" prefHeight="330.0" prefWidth="554.0" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0">
         <columns>
           <TableColumn fx:id="tbPessoaID" editable="false" maxWidth="0.0" minWidth="0.0" prefWidth="0.0" resizable="false" text="ID" />
-          <TableColumn fx:id="tbPessoaNome" editable="false" minWidth="20.0" prefWidth="215.0" text="Nome" />
-            <TableColumn fx:id="tbPessoaCPF" editable="false" prefWidth="122.0" text="CPF" />
-            <TableColumn fx:id="tbPessoaTelefone" editable="false" prefWidth="103.0" text="Telefone" />
-            <TableColumn fx:id="tbPessoaEmpresa" editable="false" minWidth="30.0" prefWidth="99.0" text="Empresa/dpto" />
+          <TableColumn fx:id="tbPessoaNome" editable="false" minWidth="20.0" prefWidth="215.0" sortable="false" text="Nome" />
+            <TableColumn fx:id="tbPessoaCPF" editable="false" prefWidth="122.0" resizable="false" sortable="false" text="CPF" />
+            <TableColumn fx:id="tbPessoaTelefone" editable="false" prefWidth="103.0" resizable="false" sortable="false" text="Telefone" />
+            <TableColumn fx:id="tbPessoaEmpresa" editable="false" minWidth="30.0" prefWidth="99.0" sortable="false" text="Empresa/dpto" />
         </columns>
       </TableView>
       <Label layoutX="666.0" layoutY="40.0" opacity="0.23" prefHeight="623.0" prefWidth="759.0" style="-fx-background-color: white; -fx-background-radius: 8;" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="40.0" />
@@ -87,11 +87,11 @@
       <TableView fx:id="tblEmUso" layoutX="679.0" layoutY="107.0" onMouseClicked="#selectLinhaUso" prefHeight="515.0" prefWidth="730.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="107.0">
          <columns>
             <TableColumn fx:id="tblEmUsoidHistorico" maxWidth="0.0" minWidth="0.0" prefWidth="0.0" text="ID" />
-            <TableColumn fx:id="tbEmUsoChave" editable="false" maxWidth="90.0" minWidth="30.0" prefWidth="60.0" text="Chave" />
-            <TableColumn fx:id="tbEmUsoLocal" editable="false" maxWidth="338.0" minWidth="100.0" prefWidth="305.0" text="Local" />
-            <TableColumn fx:id="tbEmUsoPessoa" editable="false" maxWidth="264.0" minWidth="50.0" prefWidth="165.0" text="Pessoa" />
-            <TableColumn fx:id="tbEmUsoDia" editable="false" maxWidth="200.0" minWidth="20.0" prefWidth="85.0" text="Dia Saída" />
-            <TableColumn fx:id="tbEmUsoHora" editable="false" maxWidth="200.0" minWidth="20.0" prefWidth="106.0" text="Hora Saída" />
+            <TableColumn fx:id="tbEmUsoChave" editable="false" maxWidth="220.0" minWidth="0.0" prefWidth="60.0" resizable="false" sortable="false" text="Chave" />
+            <TableColumn fx:id="tbEmUsoLocal" editable="false" maxWidth="338.0" minWidth="100.0" prefWidth="305.0" sortable="false" text="Local" />
+            <TableColumn fx:id="tbEmUsoPessoa" editable="false" maxWidth="264.0" minWidth="50.0" prefWidth="165.0" sortable="false" text="Pessoa" />
+            <TableColumn fx:id="tbEmUsoDia" editable="false" maxWidth="200.0" minWidth="20.0" prefWidth="85.0" resizable="false" sortable="false" text="Dia Saída" />
+            <TableColumn fx:id="tbEmUsoHora" editable="false" maxWidth="200.0" minWidth="20.0" prefWidth="106.0" resizable="false" sortable="false" text="Hora Saída" />
          </columns>
       </TableView>
       <JFXButton fx:id="btnCautelar" buttonType="RAISED" layoutX="659.0" layoutY="694.0" onAction="#Cautela" prefHeight="80.0" prefWidth="120.0" text="CAUTELA" AnchorPane.rightAnchor="661.0" />

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="tbPane" prefHeight="616.0" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to right top, #7c7c7c, #5c5c5c, #3e3e3e, #222222, #000000);" stylesheets="@../UI/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaHistoricoController">
+<AnchorPane id="AnchorPane" fx:id="tbPane" prefHeight="616.0" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to right top, #7c7c7c, #5c5c5c, #3e3e3e, #222222, #000000);" stylesheets="@../UI/Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaHistoricoController">
    <children>
       <TableView fx:id="tbBuscaChave" layoutX="233.0" layoutY="142.0" onMouseClicked="#selectLinha" prefHeight="153.0" prefWidth="536.0" AnchorPane.leftAnchor="233.0" AnchorPane.rightAnchor="231.0" AnchorPane.topAnchor="142.0">
          <columns>
-            <TableColumn fx:id="tbChaveChave" maxWidth="64.0" minWidth="30.0" prefWidth="64.0" text="Chave" />
-            <TableColumn fx:id="tbChaveLocal" maxWidth="518.0" minWidth="200.0" prefWidth="319.0" text="Local" />
-            <TableColumn fx:id="tbChaveDPTO" maxWidth="379.0" minWidth="35.0" prefWidth="137.0" text="Departamento" />
+            <TableColumn fx:id="tbChaveChave" editable="false" maxWidth="64.0" minWidth="30.0" prefWidth="64.0" sortable="false" text="Chave" />
+            <TableColumn fx:id="tbChaveLocal" editable="false" maxWidth="518.0" minWidth="200.0" prefWidth="319.0" sortable="false" text="Local" />
+            <TableColumn fx:id="tbChaveDPTO" editable="false" maxWidth="379.0" minWidth="35.0" prefWidth="137.0" sortable="false" text="Departamento" />
          </columns>
       </TableView>
       <TextField fx:id="txtBuscaChave" layoutX="288.0" layoutY="95.0" onKeyPressed="#enterBuscaChave" onKeyReleased="#Busca" prefHeight="34.0" prefWidth="425.0" promptText="Buscar chave" style="-fx-background-radius: 20;" />

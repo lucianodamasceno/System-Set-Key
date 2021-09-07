@@ -21,9 +21,16 @@
     -fx-padding: 0.0em 0.0em 0.0em 0.0em;
     -fx-text-fill: black;
     -fx-background: darkgray ;
-
+    -fx-background-radius: 5px;
 }
-
+.context-menu {
+-fx-background-insets: 0;
+-fx-padding: 5px;
+-fx-background-radius: 5px;
+-fx-border-radius: 5px;
+-fx-border-color: rgba(245, 245, 245, 0.1);
+-fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.6) , 6, 0.0 , 0 , 0);
+}
 .menu-item .label {
     -fx-alignment: CENTER;
 }
@@ -59,7 +66,6 @@ TextField:pressed{
     -fx-border-color: #2196f3;
 }
 
-
 #btnBuscaChaveHistorico{ 
 
     -fx-background-image: url('../image/procurar.png');
@@ -85,16 +91,17 @@ Table-view.column-header{
     -fx-background-radius: 2;
 }
 .table-row-cell:selected {
+    -fx-alignment: center;
     -fx-background-color: #00B9FF;
     -fx-background-insets: 0;
     -fx-background-radius: 10;
 }
 .table-row-cell:hover{
+    -fx-alignment: center;
     -fx-background-color: #DEDEDE;
     -fx-background-radius: 10;
     -fx-font-size: 14 pt;
 }
-
 
 .button{
     -fx-background-radius: 30;       
@@ -173,6 +180,7 @@ Table-view.column-header{
 }
 
 .tab:selected {
+    -fx-alignment: center;
     -fx-background-color:#2196f3;
 }
 
@@ -180,13 +188,7 @@ Table-view.column-header{
     -fx-graphic: url("../image/chaveIco.png");
 }
 
-/*
-#btnGerenciaChave{
-    -fx-background-image: url('../image/chave.png');
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: 20%;
-    -fx-background-size: 30;
-}*/
+
 #btnGerenciaPessoa >.label{
     -fx-graphic: url("../image/peopleIco.png")
 
@@ -204,6 +206,7 @@ Table-view.column-header{
 }
 
 .table-view:focused .table-row-cell:focused {
+    -fx-alignment: center;
     -fx-border-color: derive(-fx-base, 20%);
     -fx-background-insets: 0 0 0 0;
     -fx-table-cell-border-color: transparent;
